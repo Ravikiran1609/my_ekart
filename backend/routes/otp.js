@@ -1,6 +1,6 @@
 import express from 'express';
 import User from '../models/User.js';
-import sendOtp from '../utils/sendOtp.js';
+import { sendOtp } from '../utils/sendOtp.js'; 
 
 const router = express.Router();
 
