@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js'; // assuming you have Mongo connection setup
 
 // Routes
-import authRoutes from './routes/auth.js';
 import otpRoutes from './routes/otp.js';
 import googleRoutes from './routes/google.js'; // ✅ ADD THIS
 
