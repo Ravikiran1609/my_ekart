@@ -4,6 +4,8 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import OtpLogin from './pages/OtpLogin';
 import Home from './pages/Home';
+import CartPage from './pages/CartPage';
+import UserDashboard from './pages/UserDashboard';
 import OTPLogin from './components/OTPLogin';
 import EmailLogin from './components/EmailLogin';
 import LoginOptions from './components/LoginOptions';
@@ -33,6 +35,8 @@ export default function App() {
 	    <Route path="/otp-login" element={<OtpLogin />} />
 	    <Route path="/" element={<Login />} />
 	    <Route path="/login/user" element={<UserLogin />} />
+	    <Route path="/cart" element={<CartPage />} />
+	    <Route path="/dashboard" element={<UserDashboard />} />
 	    <Route path="/login" element={<Login />} />
 	    <Route path="/login" element={<LoginOptions />} />
 	    <Route path="/user/dashboard" element={<UserDashboard />} />
