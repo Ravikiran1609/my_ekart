@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AdminLogin from './admin/AdminLogin';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import OtpLogin from './pages/OtpLogin';
 import Home from './pages/Home';
 import OTPLogin from './components/OTPLogin';
 import EmailLogin from './components/EmailLogin';
@@ -25,6 +28,10 @@ export default function App() {
             <Route path="/checkout" element={<CheckoutPage />} />
 	    <Route path="/admin/login" element={<AdminLogin onLogin={() => window.location.href = '/admin/dashboard'} />} />
 	    <Route path="/admin/dashboard" element={<AdminDashboard />} />
+	    <Route path="/signup" element={<Signup />} />
+	    <Route path="/otp-login" element={<OtpLogin />} />
+	    <Route path="/" element={<Login />} />
+	    <Route path="/login" element={<Login />} />
 	    <Route path="/login" element={<LoginOptions />} />
 	    <Route path="/login/otp" element={<OTPLogin />} />
 	    <Route path="/login/email" element={<EmailLogin />} />
