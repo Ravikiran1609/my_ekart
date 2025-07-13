@@ -2,12 +2,16 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-
+import authRoutes from './routes/auth.js';
 import User from '../models/User.js';
 import Admin from '../models/Admin.js';
 
 dotenv.config();
 const router = express.Router();
+
+const app = express();
+app.use(express.json());
+app.use('/auth', authRoutes);
 
 // ✅ Signup route
 router.post('/signup', async (req, res) => {
