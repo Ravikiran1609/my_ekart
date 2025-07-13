@@ -2,7 +2,6 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import authRoutes from './routes/auth.js';
 import User from '../models/User.js';
 import Admin from '../models/Admin.js';
 
