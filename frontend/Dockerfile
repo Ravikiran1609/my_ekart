@@ -1,16 +1,10 @@
-FROM node:18
-
+# frontend/Dockerfile
+FROM node:18 as build
 WORKDIR /app
-
-COPY package*.json ./
-RUN npm install
-
 COPY . .
+RUN npm install && npm run build
 
-RUN npm run build
-
-EXPOSE 3000
-
-# ✅ Force Vite to run on port 3000 and bind to all interfaces
-CMD ["npm", "run", "preview", "--", "--host", "--port", "3000"]
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
