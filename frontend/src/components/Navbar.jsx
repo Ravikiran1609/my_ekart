@@ -1,37 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const token = localStorage.getItem('userToken');
-    const userInfo = localStorage.getItem('userInfo');
-    if (token && userInfo) {
-      setUser(JSON.parse(userInfo));
-    }
-  }, []);
+  const token = localStorage.getItem('token');
 
   const handleLogout = () => {
-    localStorage.removeItem('userToken');
-    localStorage.removeItem('userInfo');
-    setUser(null);
+    localStorage.removeItem('token');
     navigate('/');
   };
 
   return (
-    <nav className="bg-white shadow-md px-6 py-3 flex justify-between items-center">
-      <Link to="/" className="text-xl font-bold text-blue-600">My eKart</Link>
-      <div className="flex items-center gap-4">
-        <Link to="/cart" className="text-gray-700 hover:text-blue-600">Cart</Link>
-        {user ? (
+    <nav className="flex justify-between items-center p-4 bg-gray-800 text-white">
+      <Link to="/" className="text-xl font-bold">eKart</Link>
+      <div className="space-x-4">
+        {token ? (
           <>
-            <Link to="/dashboard" className="text-gray-700 hover:text-blue-600">Hi, {user.name}</Link>
-            <button onClick={handleLogout} className="text-red-600 hover:underline">Logout</button>
+            <Link to="/dashboard">Dashboard</Link>
+            <button onClick={handleLogout} className="bg-red-500 px-3 py-1 rounded">Logout</button>
           </>
         ) : (
-          <Link to="/login" className="text-blue-600 hover:underline">Login</Link>
+          <>
+            <Link to="/login">Login</Link>
+            <Link to="/signup" className="bg-green-600 px-3 py-1 rounded">Signup</Link>
+          </>
         )}
       </div>
     </nav>
