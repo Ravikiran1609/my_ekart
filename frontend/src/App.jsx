@@ -13,6 +13,7 @@ import ProductDetails from "./pages/ProductDetails";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import Navbar from "./components/Navbar";
+import UserLogin from './pages/UserLogin';
 import React from 'react';
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
 	    <Route path="/signup" element={<Signup />} />
 	    <Route path="/otp-login" element={<OtpLogin />} />
 	    <Route path="/" element={<Login />} />
+	    <Route path="/login/user" element={<UserLogin />} />
 	    <Route path="/login" element={<Login />} />
 	    <Route path="/login" element={<LoginOptions />} />
 	    <Route path="/login/otp" element={<OTPLogin />} />
