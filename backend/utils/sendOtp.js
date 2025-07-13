@@ -1,3 +1,5 @@
+// backend/utils/sendOtp.js
+
 import axios from 'axios';
 
 export const sendOtp = async (phone, otp) => {
@@ -6,9 +8,9 @@ export const sendOtp = async (phone, otp) => {
   const data = {
     sender_id: "FSTSMS",
     language: "english",
-    route: "qt", // or 'otp' if that matches your template
+    route: "qt", // change to 'otp' if that's what your Fast2SMS template uses
     numbers: phone,
-    message: "YOUR_TEMPLATE_ID", // replace with actual template ID
+    message: "YOUR_TEMPLATE_ID", // replace with your real template ID
     variables: "{#BB#}",
     variables_values: otp
   };
