@@ -4,7 +4,6 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import otpRoutes from './routes/otp.js';
 import googleRoutes from './routes/google.js';
-
 import productRoutes from './routes/product.js';
 import paymentRoutes from './routes/payment.js';
 import authRoutes from './routes/auth.js';
