@@ -9,6 +9,8 @@ const Login = () => {
     try {
       const res = await axios.post('/api/auth/login', form);
       alert(res.data.message || 'Login successful');
+      localStorage.setItem('token', res.data.token);
+      navigate('/user/dashboard');	    
     } catch (err) {
       alert('Login failed');
     }

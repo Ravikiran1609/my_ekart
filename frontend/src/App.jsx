@@ -35,6 +35,7 @@ export default function App() {
 	    <Route path="/login/user" element={<UserLogin />} />
 	    <Route path="/login" element={<Login />} />
 	    <Route path="/login" element={<LoginOptions />} />
+	    <Route path="/user/dashboard" element={<UserDashboard />} />
 	    <Route path="/login/otp" element={<OTPLogin />} />
 	    <Route path="/login/email" element={<EmailLogin />} />
           </Routes>
