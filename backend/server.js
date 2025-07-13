@@ -2,6 +2,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import otpRoutes from './routes/otp.js';
+import googleRoutes from './routes/google.js';
 
 import productRoutes from './routes/product.js';
 import paymentRoutes from './routes/payment.js';
@@ -19,6 +21,8 @@ const PORT = process.env.PORT || 5000;
 app.use('/api/products', productRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/otp', otpRoutes);
+app.use('/api/google', googleRoutes);
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
