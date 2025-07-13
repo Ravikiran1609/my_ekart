@@ -32,7 +32,7 @@ services:
   nginx:
     build:
       context: ./frontend
-      dockerfile: nginx.Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "80:80"
     depends_on:
