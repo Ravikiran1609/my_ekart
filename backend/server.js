@@ -1,3 +1,4 @@
+import authRoutes from './routes/auth.js';
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
@@ -6,7 +7,6 @@ import otpRoutes from './routes/otp.js';
 import googleRoutes from './routes/google.js';
 import productRoutes from './routes/product.js';
 import paymentRoutes from './routes/payment.js';
-import authRoutes from './routes/auth.js';
 
 dotenv.config();
 
